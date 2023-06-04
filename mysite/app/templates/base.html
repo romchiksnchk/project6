@@ -1,0 +1,25 @@
+{% load static %}
+
+<body>
+
+<header>
+    {% if user.is_authenticated %}
+    <a class="nav-link fw-bold py-1 px-0" href="{% url 'index' %}"> Главная: {{ request.user.username }}</a>
+    <a class="nav-link fw-bold py-1 px-0" href="{% url 'logout' %}">Выход</a>
+    {%else%}
+    <a class="nav-link fw-bold py-1 px-0" href="{% url 'login' %}">Авторизация</a>
+    <a class="nav-link fw-bold py-1 px-0" href="{% url 'registration' %}">Регистрация</a>
+{%endif%}
+     <a href="{% url 'product' %}">Продукты</a>
+
+    <a href="{% url 'about' %}">О нас</a>
+
+    <a href="{% url 'contact' %}">Контакты</a>
+
+    <a href="{% url 'add_product' %}">Добавить</a>
+</header>
+
+{% block content %}{%  endblock %}
+
+</body>
+

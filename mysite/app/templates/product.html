@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for product in product_list %}
+
+<img src="{{ product.image.url }}" alt = "connected" >
+<br>
+{{ product.name }}<br>
+{{ product.description }}<br>
+
+{% endfor %}
+{% endblock %}
